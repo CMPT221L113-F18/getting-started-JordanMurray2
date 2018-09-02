@@ -1,0 +1,34 @@
+<!--Jordan Murray -->
+<!-- This program will take in the temperature in Farenheit and the relative humidity as a percentage and calculate the heat index accordingly -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 1 - Heat Index Calculator</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <h1>Heat Index Calculator</h1>
+    <p>This web application allows you to enter the current temperature, in degrees Fahrenheit, and the humidity, in a percentage, and calculates the current heat index.</p>
+    <!-- create form that allows user to enter the temperature -->
+    <form onsubmit="return false;">
+      <label>
+        Temp (F&deg; )
+        <input type="number" id="tempInput" value="0" />
+      </label>
+      <button onclick="assessTemperature();">Evaluate</button>
+      <output id="result"></output>
+    </form>
+    <!--create form that allows user to enter the humidity-->
+    <form onsubmit="return false;">
+      <label>
+        Humidity (%)
+        <input type="number" id="humidityInput" value="0" />
+      </label>
+      <button onclick="assessTemperature();">Evaluate</button>
+      <output id="result"></output>
+    </form>
+    <script>
+    </script>
+  </body>
+</html>
+
