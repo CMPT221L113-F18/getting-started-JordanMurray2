@@ -15,19 +15,26 @@
         Temp (F&deg; )
         <input type="number" id="tempInput" value="0" />
       </label>
-      <button onclick="assessTemperature();">Evaluate</button>
-      <output id="result"></output>
-    </form>
-    <!--create form that allows user to enter the humidity-->
-    <form onsubmit="return false;">
       <label>
         Humidity (%)
         <input type="number" id="humidityInput" value="0" />
       </label>
-      <button onclick="assessTemperature();">Evaluate</button>
+      <button onclick="assessHeatIndex();">Evaluate</button>
       <output id="result"></output>
     </form>
     <script>
+      function assessHeatIndex() {
+        var inputElem1 = document.querySelector('#tempInput');
+        var inputElem2 = document.querySelector('#humidityInput');
+        var heatIndex = document.querySelector('#result');
+        var temp = inputElem1.value;
+        var relhum = inputElem2.value;
+        var index;
+        
+        index = -42.379 + 2.04901523 * temp + 10.14333127 * relhum - 0.22475541 * temp * relhum - 0.00683783 * temp^2 - 0.05481717 * relhum^2 + 0.00122874 * temp^2 * relhum + 0.00085282 * temp * relhum^2 - 0.00000199 * temp2 * relhum^2
+        
+        heatIndex.innerHTML = 'The Heat index for today is ' + index
+      }
     </script>
   </body>
 </html>
