@@ -40,7 +40,7 @@
       <label>
         Temp (F&deg; )
         <input type="number" id="tempInput" value="0" />
-      </label></br>
+      </label><br>
       <!-- label tag creates the humidity input box -->
       <label>
         Humidity (%)
@@ -48,7 +48,7 @@
       </label>
       <!-- calls on the javascript function to calculate the index -->
       <button onclick="assessHeatIndex();">Calculate</button>
-      </br>
+      <br>
       <!-- prints the output on the page for the user to see -->
       <output id="result"></output>
     </form>
@@ -62,9 +62,7 @@
         var relhum = inputElem2.value;
         var index;
         
-        relhum = relhum / 100;
-        
-        index = -42.379 + 2.04901523 * temp + 10.14333127 * relhum - 0.22475541 * temp * relhum - 0.00683783 * temp^2 - 0.05481717 * relhum^2 + 0.00122874 * temp^2 * relhum + 0.00085282 * temp * relhum^2 - 0.00000199 * temp^2 * relhum^2;
+        index = -42.379 + 2.04901523 * temp + 10.14333127 * relhum - 0.22475541 * temp * relhum - 0.00683783 * (temp * temp) - 0.05481717 * (relhum * relhum) + 0.00122874 * (temp * temp) * relhum + 0.00085282 * temp * (relhum * relhum) - 0.00000199 * (temp * temp) * (relhum * relhum);
         
         outputElem.innerHTML = 'The Heat index is ' + index + ' for today '
       }
